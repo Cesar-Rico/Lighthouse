@@ -15,6 +15,14 @@ public class sharkScript : MonoBehaviour
     {
         player = GameObject.Find("player");
         playerPosIni = player.transform.position;
+
+        //Codigo para hacer que el tiburon mire al player
+        Vector3 lookAt = player.transform.position;
+        float AngleRad = Mathf.Atan2(lookAt.y - this.transform.position.y, lookAt.x - this.transform.position.x);
+        float AngleDeg = ((180 / Mathf.PI) * AngleRad);
+        this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg - 90);
+
+        //Codigo para hacer que el tiburon se lance
         distance = Mathf.Sqrt(Mathf.Pow(this.transform.position.y - playerPosIni.y,2) + Mathf.Pow(this.transform.position.x - playerPosIni.x,2));
         print(distance);
         LookAt2D(this.gameObject, playerPosIni);
