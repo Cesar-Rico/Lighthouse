@@ -27,7 +27,7 @@ public class generador_codigo : MonoBehaviour
             GameObject newshark = Instantiate(shark);
             newshark.transform.position = this.transform.position;
             //newshark.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
-            newshark.transform.LookAt(player);
+
 
 
             Destroy(newshark, 10);
