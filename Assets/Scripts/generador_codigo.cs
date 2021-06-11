@@ -29,6 +29,7 @@ public class generador_codigo : MonoBehaviour
             //newshark.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
 
 
+
             Destroy(newshark, 10);
 			timer = 0;
 		}
