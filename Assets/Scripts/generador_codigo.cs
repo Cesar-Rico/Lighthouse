@@ -7,26 +7,32 @@ public class generador_codigo : MonoBehaviour
     public float timer = 0, turnSpeed, maxTime = 1;
     public GameObject shark;
     public GameObject faro;
+    public GameObject player;
 
     //Función que se ejecuta una sola vez al comienzo.
     void Start()
     {
-        //GameObject newpipe = Instantiate(pipe);
-        //newpipe.transform.position = transform.position + new Vector3(0, Random.Range(-height -1.75f, height - 1.75f), 0);
     }
 
     //Función que se ejecuta múltiples veces (cada frame) todo el tiempo
     void Update()
     {
-        //if (timer > maxTime)
-        //{
-        //    GameObject newpipe = Instantiate(pipe);
-        //    newpipe.transform.position = transform.position + new Vector3(0, Random.Range(-height - 1.75f, height - 1.75f), 0);
-        //    Destroy(newpipe, 10);
-        //    timer = 0;
-        //}
-        //timer += Time.deltaTime;
-
+        //Gira el objeto invisible en el que se instancia un tiburon.
         this.transform.RotateAround(faro.transform.position, Vector3.forward, turnSpeed * Time.deltaTime);
+
+        if (timer > maxTime)
+        {
+            var rotation = Quaternion.LookRotation(player.transform.position);
+            rotation *= Quaternion.Euler(0, 90, 0); // this adds a 90 degrees Y rotation
+            GameObject newshark = Instantiate(shark);
+            newshark.transform.position = this.transform.position;
+            //newshark.transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+            newshark.transform.LookAt(player);
+
+
+            Destroy(newshark, 10);
+			timer = 0;
+		}
+		timer += Time.deltaTime;		
     }
 }
