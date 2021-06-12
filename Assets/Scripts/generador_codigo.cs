@@ -31,10 +31,11 @@ public class generador_codigo : MonoBehaviour
     IEnumerator sharkInstance()
 	{
         Vector3 posIni = this.transform.position;
+        Vector3 childPosIni = this.transform.GetChild(0).transform.position;
         //Instanciamos el signo de exclamacion
         yield return new WaitForSeconds(0.1f);
         GameObject newexcla = Instantiate(exclamation);
-        newexcla.transform.position = this.transform.GetChild(0).transform.position;
+        newexcla.transform.position = childPosIni;
         Destroy(newexcla, 1);
 
         //Esperamos 1 segundo antes de instanciar un tiburon
@@ -45,6 +46,10 @@ public class generador_codigo : MonoBehaviour
 
         yield return new WaitForSeconds(Random.Range(-3f,3f));
         StartCoroutine(sharkInstance());
-    } 
-    
+    }
+
+    public static float Angle2(Vector2 a, Vector2 b)
+    {
+        return Mathf.Atan2(b.y - a.y, b.x - a.x) * 180f / Mathf.PI;
+    }
 }

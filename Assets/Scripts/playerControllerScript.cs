@@ -38,6 +38,5 @@ public class playerControllerScript : MonoBehaviour
     {
         print("Choco con el tiburon");
         gameManager.GameOver();
-        gameOver.gameObject.SetActive(true);
     }
 }
