@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 285419437}
   - component: {fileID: 285419436}
   - component: {fileID: 285419439}
+  - component: {fileID: 285419441}
   m_Layer: 0
   m_Name: Faro
   m_TagString: Untagged
@@ -291,6 +292,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hspeed: 0.5
+  shadow: {fileID: 0}
+  generatorPosition: {fileID: 0}
+  sharkGenerator: {fileID: 0}
+  gameOver: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!4 &285419440
 Transform:
   m_ObjectHideFlags: 0
@@ -308,6 +314,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &285419441
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285419435}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.09, y: 0.09}
+    newSize: {x: 0.09, y: 0.09}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.09, y: 0.09}
+  m_EdgeRadius: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 782459609}
   - component: {fileID: 782459608}
+  - component: {fileID: 782459610}
   m_Layer: 0
   m_Name: stuffGenerator
   m_TagString: Untagged
@@ -602,6 +635,18 @@ Transform:
   m_Father: {fileID: 1523118207}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &782459610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782459607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d0dae2d82f8a844860365651b91313, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &787503502
 GameObject:
   m_ObjectHideFlags: 0
