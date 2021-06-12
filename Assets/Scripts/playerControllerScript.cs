@@ -10,7 +10,6 @@ public class playerControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -36,6 +35,7 @@ public class playerControllerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         print("Choco con el tiburon");
         gameManager.GameOver();
     }
