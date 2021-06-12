@@ -54,8 +54,8 @@ public class faroScript : MonoBehaviour
             int num = scoreManager.stuffManager.UseStuff();
             if (num>0) 
             { 
-                shadow.transform.localScale += scaleChange;
-                if (shadow.transform.localScale == new Vector3(5f, 5f, 0f))
+                shadow.transform.localScale += (scaleChange*num);
+                if (Vector3.Distance(shadow.transform.localScale, new Vector3(5f, 5f, 0f))<1)
                 {
                     gameManager.GameOver();
                 }
@@ -64,10 +64,10 @@ public class faroScript : MonoBehaviour
                     generatorPosition.transform.position -= new Vector3(0.2f, 0f, 0f);
                     sharkGenerator.transform.position = generatorPosition.transform.position;
 
-                    shadow.transform.GetChild(0).transform.GetChild(0).transform.position += new Vector3(0f, 0.1f* num, 0f);
-                    shadow.transform.GetChild(0).transform.GetChild(1).transform.position -= new Vector3(0f, 0.1f* num, 0f);
-                    shadow.transform.GetChild(0).transform.GetChild(2).transform.position += new Vector3(0.1f* num, 0f, 0f);
-                    shadow.transform.GetChild(0).transform.GetChild(3).transform.position -= new Vector3(0.1f* num, 0f, 0f);
+                    shadow.transform.GetChild(0).transform.GetChild(0).transform.position += new Vector3(0f, 0.1f, 0f);
+                    shadow.transform.GetChild(0).transform.GetChild(1).transform.position -= new Vector3(0f, 0.1f, 0f);
+                    shadow.transform.GetChild(0).transform.GetChild(2).transform.position += new Vector3(0.1f, 0f, 0f);
+                    shadow.transform.GetChild(0).transform.GetChild(3).transform.position -= new Vector3(0.1f, 0f, 0f);
                 }
             }
         }
