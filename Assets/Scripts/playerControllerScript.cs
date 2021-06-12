@@ -5,6 +5,8 @@ using UnityEngine;
 public class playerControllerScript : MonoBehaviour
 {
     private Vector3 mov;
+    public GameManage gameManager;
+    public GameObject gameOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +32,12 @@ public class playerControllerScript : MonoBehaviour
                             transform.position + mov,
                             5f * Time.deltaTime
                             );
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        print("Choco con el tiburon");
+        gameManager.GameOver();
+        gameOver.gameObject.SetActive(true);
     }
 }

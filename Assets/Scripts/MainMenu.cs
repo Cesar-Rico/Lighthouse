@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 	GameObject mainMenu, creditosMenu;
+	public Camera camera;
 	public TextMeshPro[] flechasDeBotones = new TextMeshPro[3];
 	public int botonSeleccionado;
 	private float pressedSpaceTime;
@@ -99,9 +100,9 @@ public class MainMenu : MonoBehaviour
 	IEnumerator creditos()
 	{
 		credits = true;
-		GetComponent<Camera>().transform.position = new Vector3(6f, 1.477005f, -20f);
+		camera.transform.position = new Vector3(6f, 1.477005f, -20f);
 		yield return new WaitForSeconds(5f);
-		GetComponent<Camera>().transform.position = new Vector3(2.043019f, 1.477005f, -20f);
+		camera.transform.position = new Vector3(2.043019f, 1.477005f, -20f);
 		credits = false;
 	}
 }
