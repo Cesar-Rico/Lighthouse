@@ -31,6 +31,7 @@ public class HeartSystem : MonoBehaviour
             Destroy(hearts[life].gameObject);
             if (life < 1)
             {
+                SoundSystemScript.PlaySound("POP_NEGATIVE_1");
                 dead = true;
             }
         }
