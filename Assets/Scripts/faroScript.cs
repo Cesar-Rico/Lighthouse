@@ -55,6 +55,7 @@ public class faroScript : MonoBehaviour
             if (num>0) 
             { 
                 shadow.transform.localScale += (scaleChange*num);
+                sharkGenerator.transform.localScale += (scaleChange*num);
                 if (Vector3.Distance(shadow.transform.localScale, new Vector3(5f, 5f, 0f))<1)
                 {
                     gameManager.GameOver();
