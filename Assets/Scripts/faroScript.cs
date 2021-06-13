@@ -9,6 +9,7 @@ public class faroScript : MonoBehaviour
     public GameObject shadow, generatorPosition, sharkGenerator, gameOver;
     public GameManage gameManager;
     private Vector3 scaleChange;
+    public CircleCollider2D shadowDetecter;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class faroScript : MonoBehaviour
         sharkGenerator = GameObject.Find("sharkGenerator");
         gameOver = GameObject.Find("GameOver");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManage>();
+        shadowDetecter = this.transform.GetChild(3).GetComponent<CircleCollider2D>();
         scaleChange = new Vector3(0.1f, 0.1f, 0f);
     }
 
@@ -56,6 +58,7 @@ public class faroScript : MonoBehaviour
             { 
                 shadow.transform.localScale += (scaleChange*num);
                 sharkGenerator.transform.localScale += (scaleChange*num);
+                shadowDetecter.radius += 0.25f * num;
                 if (Vector3.Distance(shadow.transform.localScale, new Vector3(6f, 6f, 0f))<1)
                 {
                     gameManager.Win();
