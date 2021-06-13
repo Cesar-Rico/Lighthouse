@@ -56,13 +56,13 @@ public class faroScript : MonoBehaviour
             { 
                 shadow.transform.localScale += (scaleChange*num);
                 sharkGenerator.transform.localScale += (scaleChange*num);
-                if (Vector3.Distance(shadow.transform.localScale, new Vector3(5f, 5f, 0f))<1)
+                if (Vector3.Distance(shadow.transform.localScale, new Vector3(6f, 6f, 0f))<1)
                 {
                     gameManager.GameOver();
                 }
                 else
                 {
-                    generatorPosition.transform.position -= new Vector3(0.2f, 0f, 0f);
+                    generatorPosition.transform.position -= new Vector3(0.25f*num , 0f, 0f);
                     sharkGenerator.transform.position = generatorPosition.transform.position;
 
                     shadow.transform.GetChild(0).transform.GetChild(0).transform.position += new Vector3(0f, 0.1f * num, 0f);

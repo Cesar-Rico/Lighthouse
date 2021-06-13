@@ -12,6 +12,7 @@ public class playerControllerScript : MonoBehaviour
     void Start()
     {
         heartSystem = this.GetComponent<HeartSystem>();
+        SoundSystemScript.PlaySoundtrack("Water-adventure");
     }
 
     // Update is called once per frame
@@ -27,6 +28,11 @@ public class playerControllerScript : MonoBehaviour
             Input.GetAxisRaw("Vertical"),
             0
         );
+
+        //if (mov != new Vector3(0, 0, 0))
+        //{
+        //    SoundSystemScript.PlaySoundSwimming("SWIMMING")
+        //}
 
         transform.position = Vector3.MoveTowards(
                             transform.position,

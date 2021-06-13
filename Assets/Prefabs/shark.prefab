@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4257576095855841935}
   - component: {fileID: 6063862985652925556}
   - component: {fileID: -5885037668885226710}
+  - component: {fileID: -3139167602951780852}
   m_Layer: 0
   m_Name: shark
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 8248543377919322394, guid: f8b296bacba47e34e805f24653a6fa66, type: 3}
+  m_Sprite: {fileID: 8861480726252175340, guid: ed30adaeb532d1948b52a505996718c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,8 +102,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.66659904, y: 0.49549782}
-    oldSize: {x: 0.09, y: 0.09}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.38}
     newSize: {x: 0.09, y: 0.09}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -153,3 +154,22 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &-3139167602951780852
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164335468947521185}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7cb77a662e964fc47b9ff6c6b542c2a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
