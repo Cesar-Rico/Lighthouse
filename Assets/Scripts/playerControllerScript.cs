@@ -7,9 +7,11 @@ public class playerControllerScript : MonoBehaviour
     private Vector3 mov;
     public GameManage gameManager;
     public GameObject gameOver;
+    private HeartSystem heartSystem;
     // Start is called before the first frame update
     void Start()
     {
+        heartSystem = this.GetComponent<HeartSystem>();
     }
 
     // Update is called once per frame
@@ -33,10 +35,13 @@ public class playerControllerScript : MonoBehaviour
                             );
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        print("Choco con el tiburon");
-        gameManager.GameOver();
+        if (collision.name == "shark(Clone)")
+        {
+            print("Trigger");
+            heartSystem.damage(1);
+        }
     }
 }
