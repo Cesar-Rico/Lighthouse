@@ -10,6 +10,7 @@ public class faroScript : MonoBehaviour
     public GameManage gameManager;
     private Vector3 scaleChange;
     public CircleCollider2D shadowDetecter;
+    private float timePassed;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +20,9 @@ public class faroScript : MonoBehaviour
         sharkGenerator = GameObject.Find("sharkGenerator");
         gameOver = GameObject.Find("GameOver");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManage>();
-        shadowDetecter = this.transform.GetChild(3).GetComponent<CircleCollider2D>();
+        shadowDetecter = GameObject.Find("shadowDetecter").GetComponent<CircleCollider2D>();
         scaleChange = new Vector3(0.1f, 0.1f, 0f);
+        timePassed = 0;
     }
 
     void Update()
@@ -40,6 +42,9 @@ public class faroScript : MonoBehaviour
                 this.transform.Translate(-Vector2.right * Hspeed * Time.deltaTime);
                 break;
         }
+
+        timePassed += Time.deltaTime;
+        if (timePassed > 5) reduceRadius();
     }
 
     IEnumerator movement()
@@ -54,6 +59,7 @@ public class faroScript : MonoBehaviour
         if (collision.name == "player")
         {
             int num = scoreManager.stuffManager.UseStuff();
+            timePassed = 0;
             if (num>0) 
             { 
                 shadow.transform.localScale += (scaleChange*num);
@@ -76,6 +82,24 @@ public class faroScript : MonoBehaviour
             }
         }
         
+    }
+
+    private void reduceRadius()
+    {
+        int num = 2;
+        shadow.transform.localScale -= (scaleChange * num);
+        sharkGenerator.transform.localScale -= (scaleChange * num);
+        shadowDetecter.radius -= 0.25f * num;
+
+        generatorPosition.transform.position += new Vector3(0.25f * num, 0f, 0f);
+        sharkGenerator.transform.position = generatorPosition.transform.position;
+
+        shadow.transform.GetChild(0).transform.GetChild(0).transform.position -= new Vector3(0f, 0.1f * num, 0f);
+        shadow.transform.GetChild(0).transform.GetChild(1).transform.position += new Vector3(0f, 0.1f * num, 0f);
+        shadow.transform.GetChild(0).transform.GetChild(2).transform.position -= new Vector3(0.1f * num, 0f, 0f);
+        shadow.transform.GetChild(0).transform.GetChild(3).transform.position += new Vector3(0.1f * num, 0f, 0f);
+
+        timePassed = 0;
     }
 
 

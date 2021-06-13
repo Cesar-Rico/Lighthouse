@@ -8,17 +8,22 @@ public class playerControllerScript : MonoBehaviour
     public GameManage gameManager;
     public GameObject gameOver;
     private HeartSystem heartSystem;
+    private bool musica = false;
     // Start is called before the first frame update
     void Start()
     {
         heartSystem = this.GetComponent<HeartSystem>();
-        SoundSystemScript.PlaySoundtrack("Water-adventure");
     }
 
     // Update is called once per frame
     void Update()
     {
         manageMovement();
+        if (musica == false)
+        {
+            musica = true;
+            SoundSystemScript.PlaySoundtrack("Water-adventure");
+        }
     }
 
     void manageMovement()
@@ -44,9 +49,10 @@ public class playerControllerScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.name == "shark(Clone)")
+        if (collision.name.Contains("shark"))
         {
-            print("Trigger");
+            print("Mordisco");
+            SoundSystemScript.PlaySound("Bite");
             heartSystem.damage(1);
         }
     }

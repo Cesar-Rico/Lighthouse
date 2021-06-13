@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-	GameObject mainMenu, creditosMenu;
-	public Camera camera;
-	public TextMeshPro[] flechasDeBotones = new TextMeshPro[3];
-	public int botonSeleccionado;
+	private GameObject mainMenu, creditosMenu;
 	private float pressedSpaceTime;
 	private bool credits = false;
+	public Camera myCamera;
+	public TextMeshPro[] flechasDeBotones = new TextMeshPro[3];
+	public int botonSeleccionado;
+	public Animator transitionAnim;
 
 	void Start()
 	{
@@ -84,7 +85,7 @@ public class MainMenu : MonoBehaviour
 
 	public void Jugar()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		StartCoroutine(loadScene());
 	}
 
 	public void Opciones()
@@ -100,9 +101,17 @@ public class MainMenu : MonoBehaviour
 	IEnumerator creditos()
 	{
 		credits = true;
-		camera.transform.position = new Vector3(6f, 1.477005f, -20f);
+		myCamera.transform.position = new Vector3(6f, 1.477005f, -20f);
 		yield return new WaitForSeconds(5f);
-		camera.transform.position = new Vector3(2.043019f, 1.477005f, -20f);
+		myCamera.transform.position = new Vector3(2.043019f, 1.477005f, -20f);
 		credits = false;
+	}
+
+	IEnumerator loadScene()
+	{
+		SoundSystemScript.Stop();
+		transitionAnim.SetTrigger("end");
+		yield return new WaitForSeconds(10f);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 	}
 }

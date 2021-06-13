@@ -7,7 +7,7 @@ public class HeartSystem : MonoBehaviour
     public GameObject[] hearts;
     public GameManage gameManager;
     private int life;
-    private bool dead = false;
+    private bool dead = false, murio = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +17,10 @@ public class HeartSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dead == true)
+        if (dead == true && murio == false)
         {
             print("Estas muerto");
+            murio = true;
             gameManager.GameOver();
         }
     }
@@ -31,6 +32,7 @@ public class HeartSystem : MonoBehaviour
             Destroy(hearts[life].gameObject);
             if (life < 1)
             {
+                SoundSystemScript.Stop();
                 SoundSystemScript.PlaySound("POP_NEGATIVE_1");
                 dead = true;
             }

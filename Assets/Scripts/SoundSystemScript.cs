@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundSystemScript : MonoBehaviour
 {
     public static AudioClip sampleSoundtrack, adventureSoundtrack;
-    public static AudioClip sampleSound, sharkSound, swimmingSound, loseSound, winSound;
+    public static AudioClip sampleSound, sharkSound, swimmingSound, loseSound, winSound, biteSound;
     static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class SoundSystemScript : MonoBehaviour
         swimmingSound = Resources.Load<AudioClip>("SWIMMING");
         loseSound = Resources.Load<AudioClip>("POP_NEGATIVE_1");
         winSound = Resources.Load<AudioClip>("POP_POSITIVE_5");
+        biteSound = Resources.Load<AudioClip>("Bite");
 
         //SOUNDTRACKS
         //Los nombres en comillas "" son las pistas de musica en la carpeta resources(sin extension)
@@ -45,27 +46,18 @@ public class SoundSystemScript : MonoBehaviour
             case "POP_POSITIVE_5":
                 audioSrc.PlayOneShot(winSound);
                 break;
+            
+            case "Bite":
+                audioSrc.PlayOneShot(biteSound);
+                break;
         }
     }
-    
-   // public static void PlaySoundSwimming (string clip)
-//	{
-  //      switch (clip)
-	//	{
-    //        case "Sound_sample":
-    //            audioSrc.PlayOneShot(sampleSound);
-    //            break;
-    //
-    //        case "SWIMMING":
-    //            audioSrc.PlayOneShot(swimmingSound);
-    //            break;
-    //    }
-  //  }
 
     public static void PlaySoundtrack(string clip2)
     {
         audioSrc.loop = true;
         audioSrc.Stop();
+        
         switch (clip2)
         {
             case "Soundtrack_sample":              

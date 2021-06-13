@@ -5,16 +5,19 @@ using UnityEngine;
 public class shadowDetecter : MonoBehaviour
 {
 	public bool estaFuera = false;
-    // Start is called before the first frame update
-    void Start()
+	public GameObject faro;
+	public HeartSystem playerHearts;
+
+	// Start is called before the first frame update
+	void Start()
     {
-        
-    }
+		playerHearts = GameObject.Find("player").GetComponent<HeartSystem>();
+	}
 
     // Update is called once per frame
     void Update()
     {
-        
+		this.transform.position = faro.transform.position;
     }
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -37,7 +40,7 @@ public class shadowDetecter : MonoBehaviour
 
 	IEnumerator oscuridadMata()
 	{
-		yield return new WaitForSeconds(3f);
+		yield return new WaitForSeconds(1f);
 		if(estaFuera == false)
 		{
 			yield break;
@@ -45,6 +48,7 @@ public class shadowDetecter : MonoBehaviour
 		else
 		{
 			print("Debes de llamar a tu función que baje un corazon");
+			playerHearts.damage(1);
 			StartCoroutine(oscuridadMata());
 		}
 	}
