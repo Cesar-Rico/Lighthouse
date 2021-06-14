@@ -1037,7 +1037,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 3207405264234646375, guid: e1e082a4b0a40d64ba7da579f5f33882, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3207405264234646424, guid: e1e082a4b0a40d64ba7da579f5f33882, type: 3}
       propertyPath: m_Pivot.x
@@ -1699,7 +1699,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.09, y: 0.09}
+  m_Size: {x: 0.3, y: 0.17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

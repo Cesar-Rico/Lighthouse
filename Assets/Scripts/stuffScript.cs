@@ -7,7 +7,9 @@ public class stuffScript : MonoBehaviour
 
 	private void Start()
 	{
+		StartCoroutine(rotateLeft());
 	}
+
 
 	private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,4 +21,18 @@ public class stuffScript : MonoBehaviour
 			
 		}
     }
+
+	IEnumerator rotateLeft()
+	{
+		this.transform.rotation = new Quaternion(0f, 0f, 10f, 0f);
+		yield return new WaitForSeconds(0.5f);
+		StartCoroutine(rotateRight());
+	}
+
+	IEnumerator rotateRight()
+	{
+		this.transform.rotation = new Quaternion(0f, 0f, -10f, 0f);
+		yield return new WaitForSeconds(0.5f);
+		StartCoroutine(rotateLeft());
+	}
 }

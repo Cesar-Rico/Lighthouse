@@ -34,10 +34,14 @@ public class playerControllerScript : MonoBehaviour
             0
         );
 
-        //if (mov != new Vector3(0, 0, 0))
-        //{
-        //    SoundSystemScript.PlaySoundSwimming("SWIMMING")
-        //}
+        if(mov.x > 0f)
+		{
+            this.GetComponent<SpriteRenderer>().flipX = true;
+		}
+		else
+		{
+            this.GetComponent<SpriteRenderer>().flipX = false;
+        }
 
         transform.position = Vector3.MoveTowards(
                             transform.position,
