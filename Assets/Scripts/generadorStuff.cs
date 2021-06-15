@@ -9,6 +9,7 @@ public class generadorStuff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //probando
         timer += Time.deltaTime;
 
         if (timer >= 0.6f)
