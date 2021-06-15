@@ -24,7 +24,7 @@ public class generador_codigo : MonoBehaviour
 
     IEnumerator firstInstance()
 	{
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         StartCoroutine(sharkInstance());
     }
 

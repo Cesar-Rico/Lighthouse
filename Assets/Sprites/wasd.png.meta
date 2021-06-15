@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: -7122173533431488337
     second: arrows
+  - first:
+      213: 1471743797466021535
+    second: wasd_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -38,7 +41,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -158,6 +161,27 @@ TextureImporter:
       bones: []
       spriteID: fa0a02ff7e4f82d90800000000000000
       internalID: -7122173533431488337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasd_2
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 58
+        width: 51
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9eb858af2fac6410800000000000000
+      internalID: 1471743797466021535
       vertices: []
       indices: 
       edges: []
