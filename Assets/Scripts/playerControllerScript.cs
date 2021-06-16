@@ -9,10 +9,12 @@ public class playerControllerScript : MonoBehaviour
     public GameObject gameOver;
     private HeartSystem heartSystem;
     private bool musica = false;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         heartSystem = this.GetComponent<HeartSystem>();
+        anim = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,13 +36,9 @@ public class playerControllerScript : MonoBehaviour
             0
         );
 
-        if(mov.x > 0f)
-		{
-            this.GetComponent<SpriteRenderer>().flipX = true;
-		}
-		else
-		{
-            this.GetComponent<SpriteRenderer>().flipX = false;
+        if (mov != Vector3.zero)
+        {
+            anim.SetFloat("x", mov.x);
         }
 
         transform.position = Vector3.MoveTowards(
