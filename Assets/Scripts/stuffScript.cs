@@ -20,6 +20,11 @@ public class stuffScript : MonoBehaviour
 			Destroy(gameObject);
 			
 		}
+
+		if(collision.name.Contains("shark"))
+		{
+			Destroy(gameObject);
+		}
     }
 
 	IEnumerator rotateLeft()
