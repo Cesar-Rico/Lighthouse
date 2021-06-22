@@ -61,7 +61,7 @@ public class faroScript : MonoBehaviour
             int num = scoreManager.stuffManager.UseStuff();
             timePassed = 0;
             if (num>0) 
-            { 
+            {
                 shadow.transform.localScale += (scaleChange*num);
                 sharkGenerator.transform.localScale += (scaleChange*num);
                 shadowDetecter.radius += 0.25f * num;

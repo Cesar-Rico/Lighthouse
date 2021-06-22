@@ -30,6 +30,7 @@ public class GameManage : MonoBehaviour
     {
         gameOverCanvas.SetActive(true);
         gameOverCanvas.transform.GetChild(0).gameObject.SetActive(true);
+        gameOverCanvas.transform.GetChild(1).gameObject.SetActive(true);
         Time.timeScale = 0;
         gameOver = true;
     }
@@ -37,9 +38,10 @@ public class GameManage : MonoBehaviour
     public void Win()
     {
         gameOverCanvas.SetActive(true);
-        gameOverCanvas.transform.GetChild(1).gameObject.SetActive(true);
+        gameOverCanvas.transform.GetChild(2).gameObject.SetActive(true);
+        gameOverCanvas.transform.GetChild(3).gameObject.SetActive(true);
         Time.timeScale = 0;
-        SoundSystemScript.PlaySound("POP_POSITIVE_5");
+        SoundSystemScript.PlaySound("SPECIAL_COLECT_3");
         gameOver = true;
     }
 
