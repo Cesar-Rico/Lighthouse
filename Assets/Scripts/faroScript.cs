@@ -12,6 +12,7 @@ public class faroScript : MonoBehaviour
     public CircleCollider2D shadowDetecter;
     private float timePassed;
     public Animator playerAnimator;
+    public playerControllerScript player;
     // Start is called before the first frame
     // update
     void Start()
@@ -26,6 +27,7 @@ public class faroScript : MonoBehaviour
         playerAnimator = GameObject.Find("player").GetComponent<Animator>();
         scaleChange = new Vector3(0.1f, 0.1f, 0f);
         timePassed = 0;
+        player = GameObject.Find("player").GetComponent<playerControllerScript>();
     }
 
     void Update()
@@ -72,6 +74,7 @@ public class faroScript : MonoBehaviour
                 shadowDetecter.radius += 0.25f * num;
                 if (Vector3.Distance(shadow.transform.localScale, new Vector3(6f, 6f, 0f))<1)
                 {
+                    player.GameOver();
                     gameManager.Win();
                 }
                 else

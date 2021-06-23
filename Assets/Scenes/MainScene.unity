@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 1227969510}
   playerAnimator: {fileID: 0}
+  state: 0
 --- !u!1 &285419435 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5341698518575761951, guid: 01f37d000360ade42965b7efdb8dfbf2, type: 3}
@@ -652,11 +653,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3207405265492515040, guid: e1e082a4b0a40d64ba7da579f5f33882, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -380.8
+      value: -381.88
       objectReference: {fileID: 0}
     - target: {fileID: 3207405265492515040, guid: e1e082a4b0a40d64ba7da579f5f33882, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -59.000015
+      value: -58.369995
       objectReference: {fileID: 0}
     - target: {fileID: 3207405265537529037, guid: e1e082a4b0a40d64ba7da579f5f33882, type: 3}
       propertyPath: m_SizeDelta.x
@@ -668,11 +669,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3207405265537529037, guid: e1e082a4b0a40d64ba7da579f5f33882, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -335
+      value: -336.8
       objectReference: {fileID: 0}
     - target: {fileID: 3207405265537529037, guid: e1e082a4b0a40d64ba7da579f5f33882, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -39.3
+      value: -35.100006
       objectReference: {fileID: 0}
     - target: {fileID: 3207405265537529038, guid: e1e082a4b0a40d64ba7da579f5f33882, type: 3}
       propertyPath: m_Sprite
@@ -1200,6 +1201,7 @@ MonoBehaviour:
   gameManager: {fileID: 38504719}
   gameOver: {fileID: 1227969510}
   anim: {fileID: 0}
+  state: 0
 --- !u!4 &1523118207
 Transform:
   m_ObjectHideFlags: 0

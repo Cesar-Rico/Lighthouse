@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum State { ADVENTURE, MENU }
+
 public class playerControllerScript : MonoBehaviour
 {
     private Vector3 mov;
@@ -10,21 +12,26 @@ public class playerControllerScript : MonoBehaviour
     private HeartSystem heartSystem;
     private bool musica = false;
     public Animator anim;
+    public State state;
     // Start is called before the first frame update
     void Start()
     {
         heartSystem = this.GetComponent<HeartSystem>();
         anim = this.GetComponent<Animator>();
+        state = State.ADVENTURE;
     }
 
     // Update is called once per frame
     void Update()
     {
-        manageMovement();
-        if (musica == false)
-        {
-            musica = true;
-            SoundSystemScript.PlaySoundtrack("Water-adventure");
+        if(state == State.ADVENTURE)
+		{
+            manageMovement();
+            if (musica == false)
+            {
+                musica = true;
+                SoundSystemScript.PlaySoundtrack("Water-adventure");
+            }
         }
     }
 
@@ -63,4 +70,9 @@ public class playerControllerScript : MonoBehaviour
             heartSystem.damage(1);
         }
     }
+
+    public void GameOver()
+	{
+        state = State.MENU;
+	}
 }

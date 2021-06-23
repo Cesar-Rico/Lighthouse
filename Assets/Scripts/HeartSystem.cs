@@ -8,10 +8,12 @@ public class HeartSystem : MonoBehaviour
     public GameManage gameManager;
     private int life;
     private bool dead = false, murio = false;
+    public playerControllerScript player;
     // Start is called before the first frame update
     void Start()
     {
         life = hearts.Length;
+        player = GameObject.Find("player").GetComponent<playerControllerScript>();
     }
 
     // Update is called once per frame
@@ -20,6 +22,7 @@ public class HeartSystem : MonoBehaviour
         if (dead == true && murio == false)
         {
             print("Estas muerto");
+            player.GameOver();
             murio = true;
             gameManager.GameOver();
         }
