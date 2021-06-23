@@ -1279,7 +1279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630968606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2130713, y: -1.661, z: 23.616165}
+  m_LocalPosition: {x: 1.2130713, y: -1.375, z: 23.616165}
   m_LocalScale: {x: 0.65, y: 0.62, z: 1}
   m_Children: []
   m_Father: {fileID: 1461220942}
@@ -1761,7 +1761,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790951956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2130713, y: -1.355, z: 23.616165}
+  m_LocalPosition: {x: 1.2130713, y: -1.656, z: 23.616165}
   m_LocalScale: {x: 0.65, y: 0.62, z: 1}
   m_Children: []
   m_Father: {fileID: 1461220942}
@@ -2441,7 +2441,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Alejandro Zapata\nCesar Rico\nJuan Casas\nMatheus Klein\nRa\xFAl Jeri"
+  m_text: 'Raul Jeri
+
+    Cesar Rico
+
+    Juan Casas
+
+    Alejandro Zapata
+
+    Matheus
+    Klein'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f169c2042447b914592891e958ce0007, type: 2}
   m_sharedMaterial: {fileID: 6242229327129388003, guid: f169c2042447b914592891e958ce0007, type: 2}
@@ -3178,7 +3187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595416155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.876, y: -1.3715, z: 23.616165}
+  m_LocalPosition: {x: 0.876, y: -1.6725, z: 23.616165}
   m_LocalScale: {x: 0.102253705, y: 0.093563095, z: 0.10349566}
   m_Children: []
   m_Father: {fileID: 1461220942}
@@ -3337,7 +3346,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -8020520747641186783, guid: 85cedd3e3788db348bd937e37287795b, type: 3}
+  m_Sprite: {fileID: -8020520747641186783, guid: 833abc1083dc63442a811a3895d3b3f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

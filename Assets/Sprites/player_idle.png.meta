@@ -29,6 +29,15 @@ TextureImporter:
   - first:
       213: -1458270643924781098
     second: diving3
+  - first:
+      213: -5016278937462949508
+    second: emerge_0
+  - first:
+      213: 6596592610696640285
+    second: emerge_1
+  - first:
+      213: -5707783572576921085
+    second: emerge_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -255,7 +264,7 @@ TextureImporter:
         width: 30
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,7 +285,7 @@ TextureImporter:
         width: 30
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,7 +306,7 @@ TextureImporter:
         width: 30
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -318,7 +327,7 @@ TextureImporter:
         width: 30
         height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -326,6 +335,69 @@ TextureImporter:
       bones: []
       spriteID: 6d7bb7a539e23cbe0800000000000000
       internalID: -1458270643924781098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emerge_0
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 66
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c793f3e32e8926ab0800000000000000
+      internalID: -5016278937462949508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emerge_1
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 113
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d173a88770ecb8b50800000000000000
+      internalID: 6596592610696640285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: emerge_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 113
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a1eb5f411e9c0b0800000000000000
+      internalID: -5707783572576921085
       vertices: []
       indices: 
       edges: []
