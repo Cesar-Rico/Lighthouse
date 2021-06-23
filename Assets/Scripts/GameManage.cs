@@ -7,11 +7,13 @@ public class GameManage : MonoBehaviour
 {
     public GameObject gameOverCanvas;
     private bool gameOver;
+    public Animator playerAnimator;
 
     private void Start()
     {
         Time.timeScale = 1;
         gameOver = false;
+        playerAnimator = GameObject.Find("player").GetComponent<Animator>();
     }
 
 	private void Update()
@@ -37,6 +39,8 @@ public class GameManage : MonoBehaviour
 
     public void Win()
     {
+        playerAnimator.SetInteger("isDiving", 1);
+        playerAnimator.SetInteger("isDiving", 2);
         gameOverCanvas.SetActive(true);
         gameOverCanvas.transform.GetChild(2).gameObject.SetActive(true);
         gameOverCanvas.transform.GetChild(3).gameObject.SetActive(true);

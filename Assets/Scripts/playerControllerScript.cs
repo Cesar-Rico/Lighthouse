@@ -36,9 +36,14 @@ public class playerControllerScript : MonoBehaviour
             0
         );
 
-        if (mov != Vector3.zero)
+        if (mov.x != 0f)
         {
             anim.SetFloat("x", mov.x);
+            
+        }
+        if(mov.y != 0f)
+		{
+            anim.SetFloat("y", mov.y);
         }
 
         transform.position = Vector3.MoveTowards(

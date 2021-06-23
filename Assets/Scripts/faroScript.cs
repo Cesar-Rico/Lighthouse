@@ -11,7 +11,9 @@ public class faroScript : MonoBehaviour
     private Vector3 scaleChange;
     public CircleCollider2D shadowDetecter;
     private float timePassed;
-    // Start is called before the first frame update
+    public Animator playerAnimator;
+    // Start is called before the first frame
+    // update
     void Start()
     {
         StartCoroutine(movement());
@@ -21,6 +23,7 @@ public class faroScript : MonoBehaviour
         gameOver = GameObject.Find("GameOver");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManage>();
         shadowDetecter = GameObject.Find("shadowDetecter").GetComponent<CircleCollider2D>();
+        playerAnimator = GameObject.Find("player").GetComponent<Animator>();
         scaleChange = new Vector3(0.1f, 0.1f, 0f);
         timePassed = 0;
     }
@@ -58,6 +61,8 @@ public class faroScript : MonoBehaviour
     {
         if (collision.name == "player")
         {
+            playerAnimator.SetInteger("isDiving", 1);
+            //StartCoroutine(diving());
             int num = scoreManager.stuffManager.UseStuff();
             timePassed = 0;
             if (num>0) 
@@ -84,7 +89,33 @@ public class faroScript : MonoBehaviour
         
     }
 
-    private void reduceRadius()
+    IEnumerator diving()
+	{
+        yield return new WaitForSeconds(1f / 6f);
+        if(playerAnimator.GetInteger("isDiving") == 2)
+		{
+            playerAnimator.SetInteger("isDiving", 0);
+        }
+        else if (playerAnimator.GetInteger("isDiving") == 1)
+        {
+            playerAnimator.SetInteger("isDiving", 2);
+        }
+        else if (playerAnimator.GetInteger("isDiving") == 0)
+        {
+            playerAnimator.SetInteger("isDiving", 0);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == "player")
+        {
+            playerAnimator.SetInteger("isDiving", 2);
+            StartCoroutine(diving());
+        }
+    }
+
+	private void reduceRadius()
     {
         int num = 2;
         shadow.transform.localScale -= (scaleChange * num);

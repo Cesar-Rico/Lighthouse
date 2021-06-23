@@ -47,7 +47,7 @@ public class shadowDetecter : MonoBehaviour
 		}
 		else
 		{
-			print("Debes de llamar a tu función que baje un corazon");
+			print("Oscuridad te daña");
 			playerHearts.damage(1);
 			StartCoroutine(oscuridadMata());
 		}
